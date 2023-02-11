@@ -1,0 +1,124 @@
+@import "vars";
+.MyOrder {
+	z-index: 999;
+	width: 360px;
+	max-height: calc(100vh - 65px);
+	padding: 24px;
+	box-sizing: border-box;
+	position: absolute;
+	right: 0;
+	background-color: $white;
+	top: 60px;
+	bottom: auto;
+	border-radius: 6px;
+	border: 1px solid $very-light-pink;
+	display: flex;
+	flex-direction: column;
+	-webkit-animation: tilt-in-right-1 0.60s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	        animation: tilt-in-right-1 0.60s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+@-webkit-keyframes tilt-in-right-1 {
+	0% {
+	  -webkit-transform: rotateX(-30deg) translateX(300px) skewX(30deg);
+			  transform: rotateX(-30deg) translateX(300px) skewX(30deg);
+	  opacity: 0;
+	}
+	100% {
+	  -webkit-transform: rotateX(0deg) translateX(0) skewX(0deg);
+			  transform: rotateX(0deg) translateX(0) skewX(0deg);
+	  opacity: 1;
+	}
+  }
+  @keyframes tilt-in-right-1 {
+	0% {
+	  -webkit-transform: rotateX(-30deg) translateX(300px) skewX(30deg);
+			  transform: rotateX(-30deg) translateX(300px) skewX(30deg);
+	  opacity: 0;
+	}
+	100% {
+	  -webkit-transform: rotateX(0deg) translateX(0) skewX(0deg);
+			  transform: rotateX(0deg) translateX(0) skewX(0deg);
+	  opacity: 1;
+	}
+  }
+  
+.my-order-content {
+	height: auto;
+	overflow-y: scroll;
+}
+/* width */
+.my-order-content::-webkit-scrollbar {
+	width: 5px;
+}
+/* Track */
+.my-order-content::-webkit-scrollbar-track {
+	background: $white;
+}
+/* Handle */
+.my-order-content::-webkit-scrollbar-thumb {
+	background: #9dd8a5;
+}
+/* Handle on hover */
+.my-order-content::-webkit-scrollbar-thumb:hover {
+	background: #69b974;
+}
+.CloseOrders {
+	cursor: pointer;
+	margin-top: 5px;
+
+}
+.title-container {
+	display: flex;
+}
+.title-container img {
+	transform: rotate(180deg);
+	margin-bottom: 20px;
+	margin-right: 14px;
+}
+.title {
+	font-size: $lg;
+	margin-bottom: 20px;
+	font-weight: bold;
+}
+.order {
+	display: grid;
+	grid-template-columns: auto 1fr;
+	gap: 16px;
+	align-items: center;
+	background-color: $text-input-field;
+	margin-bottom: 24px;
+	border-radius: 8px;
+	padding: 0 24px;
+}
+.order p:nth-child(1) {
+	display: flex;
+	flex-direction: column;
+}
+.order p span:nth-child(1) {
+	font-size: $md;
+	font-weight: bold;
+}
+.order p:nth-child(2) {
+	text-align: end;
+	font-weight: bold;
+}
+
+.primary-button {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: $hospital-green;
+	border-radius: 8px;
+	border: none;
+	color: $white;
+	width: 100%;
+	cursor: pointer;
+	font-size: $md;
+	font-weight: bold;
+	height: 50px;
+}
+@media (max-width: 640px) {
+	.MyOrder {
+		width: 100%;
+	}
+}
